@@ -1,0 +1,42 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.galeria{
+    background-color: v.$negro;
+    padding: 2rem;
+    border-top: 1rem solid v.$primario;
+
+    &__heading{
+        @include m.heading(v.$primario, v.$hueso, 0.3)
+    }
+
+    &__grid{
+        display: grid;
+        gap: 1rem;
+
+        @include m.tablet { 
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-auto-rows: minmax(100px, auto);
+            gap: 1rem;
+            padding-bottom: 2rem;
+        }
+    }
+
+    &__imagen{
+        transition: outline .3s ease, transform .3s ease;
+        &:hover{
+            outline: 2.1rem solid rgb(v.$hueso, 0.8);
+            transform: scale(0.9) rotate(2deg);
+        }       
+    }
+
+    &__texto-enlace{
+        color: v.$grisMedio;
+        margin: 2rem;
+    }
+
+    &__enlace{
+        color: v.$primario;
+    }
+}

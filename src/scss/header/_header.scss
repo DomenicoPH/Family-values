@@ -1,0 +1,41 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header{
+    @include m.bgImage('../img/portrait_2.webp', rgb(0 0 0 / .7));
+    padding: 1% 5% 25rem 5%;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    min-height: 100vh;
+
+    @include m.tablet { 
+        padding: 1% 20% 25rem 20%;
+    }
+
+    @include m.desktop { 
+        flex-direction: column;
+    }
+
+    &__titulo{
+        font-family: v.$fuente_titulo;
+        font-weight: 700;
+        font-size: 5rem;
+        text-align: center;
+        color: v.$hueso;
+        margin: 20% 0 0 0;
+        transition: text-shadow .3s ease;
+
+        &:hover{
+            text-shadow: 0 0 15px rgb(252 255 213 / 0.5);
+        }
+
+        @include m.tablet { 
+            font-size: 10rem;
+        }
+        @include m.desktop { 
+            font-size: 14rem;
+            margin-top: 25%;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.familyValues{
+    background-color: v.$primario;
+    border-top: 1rem solid v.$primario;
+
+
+    &__grid{
+        
+        @include m.desktop { 
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+
+    &__imagen{
+        background-image: url(/build/img/portrait_7.webp);
+        background-position: center;
+        background-size: 100;
+        background-repeat: no-repeat;
+
+        &::before{
+            transform: scale(2);
+        }
+    }
+
+        &__headingContainer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(v.$negro, 0.8);
+            min-height: 100%;
+        }
+
+        &__heading{
+            @include m.heading(v.$primario, v.$negro, 0.2);
+            margin: 0;
+            padding-bottom: 0;
+            padding-top: 35rem;
+            z-index: 2;
+        }
+        &__headingSeparation{
+            //background-color: v.$hueso;
+            background-image: linear-gradient(90deg, v.$primario, v.$hueso);
+            min-height: .8rem;
+            min-width: 50%;
+            z-index: 1;
+            transform: skewX(-50deg);
+            border-radius: 10px 0 10px 0;
+            opacity: .4;
+        }
+        &__subHeading{
+            text-align: center;
+            font-style: italic;
+            color: v.$hueso;
+            font-family: v.$fuente_principal;
+            font-size: 1rem;
+            letter-spacing: .5rem;
+            padding: 2rem;
+            padding-bottom: 35rem;
+            text-shadow: 2px 2px 0 rgba(v.$primario, 0.5);
+
+            @include m.tablet { 
+                font-size: 3.5rem;
+            }
+        }
+
+    &__texto{
+        padding: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        p{
+            color: v.$hueso;
+            font-size: 2rem;
+            font-weight: 100;
+            margin: 2rem;
+            line-height: 3rem;
+            text-align: center;
+
+            @include m.desktop{ 
+                font-size: 3rem;
+                line-height: 4rem;
+                margin: 2rem 4rem;
+            }
+        }
+    }
+
+    &__botonContainer{
+        display: flex;
+        justify-content: center;
+        margin-top: 5rem;
+
+        @include m.tablet { 
+            justify-content: flex-end;
+        }
+    }
+    &__boton{
+        background-color: v.$hueso;
+        padding: 2rem;
+        max-width: 220px;
+        border-radius: 1rem;
+        box-shadow: 5px 5px 5px rgba(v.$negro, 0.1);
+        display: flex;
+        justify-content: center;
+        font-family: v.$fuente_subtitulo;
+        color: v.$primario;
+        font-size: 3rem;
+    }
+}

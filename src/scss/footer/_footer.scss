@@ -1,0 +1,18 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer{
+    background-color: v.$negro;
+    display: flex;
+
+    &__text{
+        font-size: 1rem;
+        margin: 0 auto;
+        padding: 1rem 0;
+        color: v.$hueso;
+
+        @include m.tablet { 
+            font-size: 1.5rem;
+        }
+    }
+}

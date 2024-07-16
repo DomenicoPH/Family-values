@@ -1,0 +1,37 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.navbar{
+    
+
+    &__list{
+        padding: v.$separacion 0 0 0 ;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+
+        @include m.tablet { 
+            flex-direction: row;
+            gap: v.$separacion;
+        }
+    }
+
+    &__item{
+        opacity: 25%;
+        transition: opacity .3s ease;
+        font-size: 3rem;
+
+        @include m.desktop { 
+            font-size: 2rem;
+        }
+
+        &:hover{
+            opacity: 100%;
+        }
+        
+        a{
+            color: v.$hueso;
+        }
+    }
+}

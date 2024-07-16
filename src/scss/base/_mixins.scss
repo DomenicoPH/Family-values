@@ -1,0 +1,74 @@
+@use 'variables' as v; 
+
+/** Media Queries **/
+
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+/* Otros Mixins */
+
+@mixin boton($color, $texto) {
+    background-color: $color;
+    font-size: 2rem;
+    padding: 1.2rem 3rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: $texto;
+    text-decoration: none;
+    transition: background-color .3s ease;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+        background-color: darken($color, 10);
+    }
+
+    @include tablet {
+        width: auto;
+    }
+}
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin texto-secundario($size){
+    color: v.$secundario;
+    margin: 0 auto;
+    font-size: $size;
+}
+
+@mixin bgImage($url, $colorDegradado){
+    background-image: linear-gradient($colorDegradado 0%, $colorDegradado 100%), url($url);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+@mixin heading($colorTexto, $colorSombra, $opacidadSombra){
+    text-align: center;
+    color: $colorTexto;
+    font-family: v.$fuente_subtitulo;
+    font-size: 8rem;
+    padding: 2rem;
+    padding-top: v.$separacion;
+    text-shadow: 4px 4px 0 rgba($colorSombra, $opacidadSombra);
+}

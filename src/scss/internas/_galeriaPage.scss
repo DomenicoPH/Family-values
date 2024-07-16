@@ -1,0 +1,72 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.galeriaPage{
+    background-color: v.$negro;
+    padding: 2rem;
+    padding-bottom: 2rem;
+    border-top: 1rem solid v.$primario;
+
+    &__headingContainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem 0;
+        
+        @include m.tablet { 
+            flex-direction: row;
+            padding: 2rem 0;
+        }
+    }
+
+    &__circle{
+        border: .5rem solid v.$hueso;
+        height: 10rem;
+        width: 10rem;
+        border-radius: 1px;
+        overflow: hidden;
+        rotate: -2deg;
+
+    }
+    &__picture{
+        scale: 4.5;
+        padding-top: 3.5rem;
+        padding-right: .35rem;
+        border-radius: 1px;
+    }
+
+    &__heading{
+        @include m.heading(v.$primario, v.$hueso, 0.3);
+        font-size: 4rem;
+        padding-top: 1rem;
+        margin: 0;
+
+        @include m.desktop { 
+            font-size: 8rem;
+            padding: 2rem;
+        }
+    }
+
+    &__grid{
+        display: grid;
+        gap: 1rem;
+
+        @include m.tablet { 
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-auto-rows: minmax(100px, auto);
+            gap: 1rem;
+            padding-bottom: 2rem;
+        }
+    }
+
+    &__imagen{
+        transition: outline .3s ease, transform .3s ease;
+        &:hover{
+            outline: 2.1rem solid rgb(v.$hueso, 0.8);
+            transform: scale(0.9) rotate(2deg);
+        }       
+    }
+
+}
