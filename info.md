@@ -75,3 +75,54 @@ o...
     exports.css = css;
     exports.dev = dev;
     exports.default = series(css,dev)
+
+---
+
+# Configuración: WEBPACK
+
+1. Ejecutar en la terminal:  
+
+        npm init
+
+        // * (crea archivo package.json)
+
+        npm i --save-dev webpack webpack-cli
+
+        // * (instala webpack y webpack-cli como dependencias de desarrollo)
+
+2. build:  
+
+        "scripts": {
+          "test": "echo \"Error: no test specified\" && exit 1",
+          "build": "webpack --watch"
+        },
+
+        // * (Añadir el script "build": "webpack");
+
+3. webpack.config.js:  
+
+        module.exports = {
+            entry: ".src/js/index.js",
+            output: {
+                path: __dirname + "/build",
+                filename: "bundle.js"
+            },
+            mode: 'development',
+        };
+
+        // * (Crear archivo webpack.config.js)
+        // * (webpack.config.js exporta un objeto que contiene un 'entry point' y un 'output')
+
+4. index.html
+
+        <script src="build/bundle.js"></script>
+
+        // * (Incorpora el archivo bundle.js con todos los archivos js del proyecto compilados)
+
+
+---
+
+# RUN SCRIPTS:
+
+        npm run dev         // Corre Gulp       ----> gulpfile.js
+        npm run build       // Corre Webpack    ----> webpack.config.js
