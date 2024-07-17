@@ -52,16 +52,24 @@
     &__text{
 
         p{
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin: 2rem;
             line-height: 3rem;
             text-align: justify;
 
             @include m.tablet { 
-                font-size: 3rem;
+                font-size: 2rem;
                 line-height: 4rem;
             }
         }
+    }
+
+    &__autor{
+        color: v.$primario;
+        font-weight: 600;
+        font-family: v.$fuente_subtitulo;
+        display: flex;
+        justify-content: flex-end;
     }
 
     &__texto-enlace{
