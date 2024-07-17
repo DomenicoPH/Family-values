@@ -42,8 +42,12 @@
         padding-top: 1rem;
         margin: 0;
 
-        @include m.desktop { 
+        @include m.tablet { 
             font-size: 8rem;
+        }
+
+        @include m.desktop { 
+            font-size: 10rem;
             padding: 2rem;
         }
     }
@@ -69,4 +73,23 @@
         }       
     }
 
+}
+
+.fullscreen{
+
+    &__absoluto{
+        position: fixed;
+        width: 100%;
+        background-color: rgba(v.$negro, 0.8);
+        display: flex;
+        justify-content: center;
+        z-index: 9999;
+    }
+
+    &__imagen{
+        max-height: 100vh;
+        border: 4rem solid v.$hueso;
+        padding: .5rem;
+        z-index: 10000;
+    }
 }
