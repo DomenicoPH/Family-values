@@ -42,4 +42,45 @@
     &__tel{
         order: 3;
     }
+
+}
+
+.go-up{
+    order: 4;
+    overflow: hidden;
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    &__img{
+        position: absolute;
+        width: 5rem;
+        height: 5rem;
+        top: 0;
+        left: 0;
+    }
+
+    &:hover .go-up__img {
+        animation: gravitate 2s linear infinite;
+    }
+}
+
+@keyframes gravitate {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: -5rem; /* Subir la imagen fuera del contenedor */
+    }
+    51% {
+        opacity: 0;
+        top: 5rem; /* Reaparecer la imagen por abajo del contenedor */
+    }
+    100% {
+        top: 0;
+    }
 }

@@ -3,17 +3,21 @@
 
 .headerInterno{
     @include m.bgImage('../img/portrait_2.webp', rgb(0 0 0 / .9));
+    background-size: cover;
     background-position: center;
-    padding: 5%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
 
-    @include m.tablet { 
-        flex-direction: row-reverse;
-        justify-content: space-between;
+    &__grid{
+        padding: 5%;
+        display: flex;
+        flex-direction: column-reverse;
         align-items: center;
-        padding: 2% 5%;
+
+        @include m.tablet { 
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2% 5%;
+        }
     }
 
     &__titulo{
