@@ -21,7 +21,7 @@
     }
 
     &__circle{
-        border: .5rem solid v.$hueso;
+        border: .8rem solid v.$hueso;
         height: 10rem;
         width: 10rem;
         border-radius: 1px;
@@ -32,12 +32,12 @@
     &__picture{
         scale: 4.5;
         padding-top: 3.5rem;
-        padding-right: .35rem;
-        border-radius: 1px;
+        padding-right: .20rem;
     }
 
     &__heading{
         @include m.heading(v.$primario, v.$hueso, 0.3);
+        font-family: v.$fuente_secundaria;
         font-size: 4rem;
         padding-top: 1rem;
         margin: 0;

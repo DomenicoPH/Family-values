@@ -1,0 +1,89 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.historia{
+
+    &__heading{
+        /* color: v.$hueso;
+        font-family: v.$fuente_secundaria;
+        display: flex;
+        justify-content: flex-end;
+        font-style: italic;
+        margin: 2rem 0; */
+        @include m.heading(v.$primario, v.$hueso, 0.3);
+        font-family: v.$fuente_secundaria;
+        font-size: 4rem;
+        padding: 3rem 0;
+        margin: 0;
+
+        @include m.tablet { 
+            font-size: 8rem;
+        }
+
+        @include m.desktop { 
+            font-size: 10rem;
+            padding: 4rem 0;
+        }
+    }
+
+    &__grid{
+        display: flex;
+        flex-direction: column;
+    }    
+}
+
+.block{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding-bottom: 1rem;
+
+    &__img{
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    &__text{
+
+    }
+
+    &__parr{
+        color: v.$hueso;
+        line-height: 3rem;
+        text-align: justify;
+        margin: 0;
+        padding-top: 2rem;
+    }
+
+    &__space{
+
+    }
+}
+
+.img-block-1{
+    background-image: url(/build/img/portrait_10.webp);
+    order: 2;
+}
+.img-block-2{
+    background-image: url(/build/img/portrait_13.webp);
+}
+.img-block-3{
+    background-image: url(/build/img/origins03.webp);
+    order: 2;
+}
+.img-block-4{
+    background-image: url(/build/img/portrait_11.webp);
+}
+.img-block-5{
+    background-image: url(/build/img/portrait_12.webp);
+    order: 2;
+}
+.img-block-6{
+    background-image: url(/build/img/portrait_1.webp);
+}
+
+.parr-start-letter{
+    font-family: v.$fuente_secundaria;
+    font-size: 5rem;
+}

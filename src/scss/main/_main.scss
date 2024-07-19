@@ -10,7 +10,13 @@
     }
 
     &__heading{
-        @include m.heading(v.$primario, v.$negro, 0.2)
+        @include m.heading(v.$primario, v.$negro, 0.2);
+        margin-bottom: 3rem;
+        font-size: 4rem;
+
+        @include m.tablet { 
+            font-size: 8rem;
+        }
     }
     
     &__grid{
